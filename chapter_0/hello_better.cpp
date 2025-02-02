@@ -6,3 +6,4 @@ int main(void)
 {
     cout << "Hello, world!\n";
 }
+
