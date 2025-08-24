@@ -57,4 +57,5 @@ clean:
 	rm -rf struct
 	rm -rf initialization
 	rm -rf get_name
+	rm -rf size_of
 	rm -rf *.dSYM
