@@ -51,4 +51,10 @@ clean:
 	rm -rf literals
 	rm -rf hello_world
 	rm -rf variable
+	rm -rf test
+	rm -rf input
+	rm -rf newline
+	rm -rf struct
+	rm -rf initialization
+	rm -rf get_name
 	rm -rf *.dSYM
