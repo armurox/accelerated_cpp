@@ -3,7 +3,7 @@
 const int numStandards = 7;
 
 const long stdCodes[numStandards] = {199711L, 201103L, 201402L, 201703L, 202002L, 202302L, 202612L};
-const char *stdNames[numStandards] = {"Pre-C++1", "C++11", "C++14", "C++17", "C++20", "C++23", "C+=26"};
+const char *stdNames[numStandards] = {"Pre-C++1", "C++11", "C++14", "C++17", "C++20", "C++23", "C++26"};
 
 
 long getCPPStandard()
