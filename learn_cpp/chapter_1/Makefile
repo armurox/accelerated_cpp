@@ -59,3 +59,10 @@ clean:
 	rm -rf get_name
 	rm -rf size_of
 	rm -rf *.dSYM
+	rm -rf literal
+	rm -rf operator
+	rm -rf return
+	rm -rf useless
+	rm -rf expressions
+	rm -rf double
+	rm -rf quiz
