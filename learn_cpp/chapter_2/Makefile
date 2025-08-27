@@ -21,6 +21,8 @@ double_legal: double_legal.o
 get_name: get_name.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
 
+double_split: main_double_split.o double_split.o 
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
 
 # Debug builds
 multiple_functions_debug: multiple_functions_debug.o
@@ -62,7 +64,7 @@ clean:
 	rm -rf literal
 	rm -rf portable_exit_code
 	rm -rf return
-	rm -rf useless
+	rm -rf double_split
 	rm -rf double_legal
 	rm -rf double
 	rm -rf quiz
