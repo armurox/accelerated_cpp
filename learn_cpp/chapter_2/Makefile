@@ -18,8 +18,8 @@ do_print: do_print.o
 double_legal: double_legal.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
 
-get_name: get_name.o
-	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
+main_do_something: main_do_something.o do_something.o
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
 
 double_split: main_double_split.o double_split.o 
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
@@ -52,7 +52,7 @@ clean:
 	rm -rf *.o *.exe *.out
 	rm -rf multiple_functions
 	rm -rf do_print
-	rm -rf legal_foo_function
+	rm -rf main_do_something
 	rm -rf test
 	rm -rf input
 	rm -rf newline
@@ -67,4 +67,4 @@ clean:
 	rm -rf double_split
 	rm -rf double_legal
 	rm -rf double
-	rm -rf quiz
+	rm -rf conditional_compilation
