@@ -1,11 +1,11 @@
 CC := g++
-C_FLAGS := -std=c++23  -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -pedantic-errors
+C_FLAGS := -std=c++23  -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -pedantic-errors -I./headers/
 DEBUG_FLAGS := -O0 -ggdb
 RELEASE_FLAGS := -O2 -DNDEBUG
 .PHONY: clean all
 
 # Build all for release
-all: multiple_functions do_print double_legal get_name
+all: multiple_functions do_print main_add get_name
 
 # Individual release builds
 
@@ -15,8 +15,8 @@ multiple_functions: multiple_functions.o
 do_print: do_print.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
 
-double_legal: double_legal.o
-	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
+main_add: main_add.o add.o
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
 
 main_do_something: main_do_something.o do_something.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
@@ -31,12 +31,12 @@ multiple_functions_debug: multiple_functions_debug.o
 do_print_debug: do_print_debug.o
 	$(CC) $(C_FLAGS) $(DEBUG_FLAGS) do_print.o -o do_print
 
-double_legal_debug: double_legal_debug.o
-	$(CC) $(C_FLAGS) $(DEBUG_FLAGS) double_legal.o -o double_legal
+main_add_debug: main_add_debug.o
+	$(CC) $(C_FLAGS) $(DEBUG_FLAGS) main_add.o -o main_add
 
 # Release object files
 %.o: %.cpp
-	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) -c $<
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) -c $^
 
 # Debug object files
 multiple_functions_debug.o: multiple_functions.cpp
@@ -45,8 +45,8 @@ multiple_functions_debug.o: multiple_functions.cpp
 do_print_debug.o: do_print.cpp
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) -c do_print.cpp
 
-double_legal_debug.o: double_legal.cpp
-	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) -c double_legal.cpp
+main_add_debug.o: main_add.cpp
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) -c main_add.cpp
 
 clean:
 	rm -rf *.o *.exe *.out
@@ -65,6 +65,6 @@ clean:
 	rm -rf portable_exit_code
 	rm -rf return
 	rm -rf double_split
-	rm -rf double_legal
+	rm -rf main_add
 	rm -rf double
 	rm -rf conditional_compilation
