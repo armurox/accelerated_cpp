@@ -5,12 +5,12 @@ RELEASE_FLAGS := -O2 -DNDEBUG
 .PHONY: clean all
 
 # Build all for release
-all: multiple_functions do_print main_add get_name
+all: main do_print main_add get_name
 
 # Individual release builds
 
-multiple_functions: multiple_functions.o
-	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
+main: main.o io.o
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
 
 do_print: do_print.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $< -o $@
@@ -50,7 +50,7 @@ main_add_debug.o: main_add.cpp
 
 clean:
 	rm -rf *.o *.exe *.out
-	rm -rf multiple_functions
+	rm -rf main
 	rm -rf do_print
 	rm -rf main_do_something
 	rm -rf test
