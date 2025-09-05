@@ -1,5 +1,5 @@
 CC := g++
-C_FLAGS := -std=c++23  -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -pedantic-errors -I./headers/
+C_FLAGS := -std=c++23  -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -pedantic-errors -I./headers/ -I./headers/plog/include
 DEBUG_FLAGS := -O0 -ggdb
 RELEASE_FLAGS := -O2 -DNDEBUG
 .PHONY: clean all
@@ -22,6 +22,9 @@ main_do_something: main_do_something.o do_something.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
 
 double_split: main_double_split.o double_split.o 
+	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
+
+get_name: get_name.o
 	$(CC) $(C_FLAGS) $(RELEASE_FLAGS) $^ -o $@
 
 # Debug builds
@@ -68,3 +71,4 @@ clean:
 	rm -rf main_add
 	rm -rf double
 	rm -rf conditional_compilation
+	rm -rf get_name

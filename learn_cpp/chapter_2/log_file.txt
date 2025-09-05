@@ -1,0 +1,10 @@
+﻿2025-09-05 15:03:00.188 DEBUG [3690440] [main@17] main() called
+2025-09-05 15:03:00.188 DEBUG [3690440] [get_user_input@7] get_user_input() called
+2025-09-05 15:03:36.572 DEBUG [3691610] [main@17] main() called
+2025-09-05 15:03:36.575 DEBUG [3691610] [get_user_input@7] get_user_input() called
+2025-09-05 15:03:47.510 DEBUG [3692097] [main@17] main() called
+2025-09-05 15:03:47.511 DEBUG [3692097] [get_user_input@7] get_user_input() called
+2025-09-05 15:03:58.891 DEBUG [3692517] [main@17] main() called
+2025-09-05 15:03:58.892 DEBUG [3692517] [get_user_input@7] get_user_input() called
+2025-09-05 15:04:02.474 DEBUG [3692697] [main@17] main() called
+2025-09-05 15:04:02.475 DEBUG [3692697] [get_user_input@7] get_user_input() called
