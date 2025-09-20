@@ -17,3 +17,11 @@ char get_operator(void)
     std::cin >> op;
     return op;
 }
+
+double get_height(void)
+{
+    std::cout << "Enter the height of the tower in meters: ";
+    double h{};
+    std::cin >> h;
+    return h;
+}

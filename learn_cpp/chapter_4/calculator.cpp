@@ -1,3 +1,4 @@
+// A basic calculator
 #include "io.h"
 #include "compute.h"
 #include <iostream>
