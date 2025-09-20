@@ -2,17 +2,20 @@
 #include "compute.h"
 #include <iostream>
 
-double compute(double x, double y, char op)
+void print_result(double x, double y, char op)
 {
+    double result;
     if (op == '*')
-        return x * y;
+        result =  x * y;
     if (op == '+')
-        return x + y;
+        result =  x + y;
     if (op == '-')
-        return x - y;
+        result = x - y;
     if (op == '/')
-        return x / y;
-    return 0;
+        result = x / y;
+    else
+        return;
+    std::cout << x << ' ' << op << ' ' << y << " is " << result << '\n';
 }
 
 void print_height_every_second(double height)

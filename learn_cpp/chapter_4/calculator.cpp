@@ -11,6 +11,6 @@ int main(void)
     char op{ get_operator() };
 
     // Print out the computed output
-    std::cout << x << ' ' << op << ' ' << y << " is " << compute(x, y, op) << '\n';
+    print_result(x, y, op);
     return 0;
 }
