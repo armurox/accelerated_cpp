@@ -14,7 +14,7 @@ int main(void)
 
     std::string color{};
     std::cout << "Enter your favorite color: ";
-    std::getline(std::cin >> std::ws, color);
+    std::getline(std::cin >> std::ws, color);  // Without std::ws, cin would assume that a line has already been read in due to the dropped \n from earlier
     std::cout << "Your full name is " << name << '\n' << "And your favorite color is " << color << '\n';
 
     return 0;
