@@ -15,6 +15,6 @@ int main(void)
     constexpr int something{ sum };
 
     std::cout << "Enter your age: ";
-    constexpr int f{ cfive()};
+    constexpr int f{ cfive() };
     return 0;
 }
