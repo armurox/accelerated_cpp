@@ -2,7 +2,8 @@
 #include <iostream>
 
 // Functions normally execute at run time and are therefore not legal initialization values for constexpr variables
-int five(void)
+// I have made this a constepr function here
+constexpr int cfive(void)
 {
     return 5;
 }
@@ -14,9 +15,6 @@ int main(void)
     constexpr int something{ sum };
 
     std::cout << "Enter your age: ";
-    int age{};
-    std::cin >> age;
-    constexpr int my_age{ age };  // incorrect
-    constexpr int f{ five()};  // incorrect
+    constexpr int f{ cfive()};
     return 0;
 }
