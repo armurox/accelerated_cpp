@@ -10,7 +10,7 @@ constexpr int cfive(void)
 
 int main(void)
 {
-    constexpr double gravity{ 9.8 };
+    constexpr double gravity{ 9.8 }; // This can be optimized by the compiler now
     constexpr int sum{ 4 + 5 };
     constexpr int something{ sum };
 
