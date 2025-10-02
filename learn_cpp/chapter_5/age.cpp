@@ -2,20 +2,29 @@
 #include <iostream>
 #include <string>
 
+std::string get_name(int num)
+{   
+    std::cout << "Enter the name of person #" << num << ": ";
+    std::string name;
+    std::getline(std::cin >> std::ws, name);
+    return name;
+}
+
+int get_age(std::string name)
+{
+    std::cout << "Enter the age of " << name << ": ";
+    int age;
+    std::cin >> age;
+    return age;
+}
+
 int main(void)
 {
-    std::cout << "Enter the name of person #1: ";
-    std::string name_1;
-    std::cin >> name_1;
-    std::cout << "Enter the age of " << name_1 << ": ";
-    int age_1;
-    std::cin >> age_1;
-    std::cout << "Enter the name of person #2: ";
-    std::string name_2;
-    std::cin >> name_2;
-    std::cout << "Enter the age of " << name_2 << ": ";
-    int age_2;
-    std::cin >> age_2;
+
+    const std::string name_1{ get_name(1) };
+    int age_1{ get_age(name_1) };
+    const std::string name_2{ get_name( 2 )};
+    const int age_2{ get_age(name_2) };
     std::cout << ((age_1 > age_2) ? name_1 : name_2) << " is older than " << ((age_1 > age_2) ? name_2 : name_1) << '\n';
     return 0;
 }
