@@ -22,7 +22,7 @@ int main(void)
 {
 
     const std::string name_1{ get_name(1) };
-    int age_1{ get_age(name_1) };
+    const int age_1{ get_age(name_1) };
     const std::string name_2{ get_name( 2 )};
     const int age_2{ get_age(name_2) };
     std::cout << ((age_1 > age_2) ? name_1 : name_2) << " is older than " << ((age_1 > age_2) ? name_2 : name_1) << '\n';
