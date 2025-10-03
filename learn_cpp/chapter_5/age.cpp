@@ -18,7 +18,6 @@ int get_age(std::string name)
     return age;
 }
 
-
 int main(void)
 {
 
